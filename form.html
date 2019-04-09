@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Обработка форм</title>
+    <script type="text/javascript">
+      function valid (form) {
+        var fail=false;
+        var name =form.name.value;
+        var password = form.password.value;
+        var RePassword = form.RePassword.value;
+        var state = form.state.value;
+        if (name == "" || name == " ") fail = "Представляться не учили?";
+        else if (password == "") fail = "Ума не хватает, что бы пароль придумать?";
+        else if (password != RePassword) fail = "Два раза пароль ввести надо, умник!";
+        else if (state == "") fail = "Ты бесполый у нас? Агамогенезом занимаешься?";
+
+        if (fail)
+          alert(fail);
+        else
+          window.location="https://coub.com/view/1he7h0";
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" method="post" name="test" id="form">
+        <label for="name">Имя</label>
+        <input type="text" name="name" placeholder="Имя" id="name"><br/><br/>
+        <label for="password">Пароль</label>
+        <input type="password" name="password" placeholder="Пароль" id="password"><br/><br/>
+        <label for="RePassword">Подтверждение</label>
+        <input type="password" name="RePassword" placeholder="Подтверждение" id="RePassword"><br/><br/>
+        <span>Пол:</span>
+        <input type="radio" name="state" value="Мужской" id="male"/>
+        <label for="">Мужской</label>
+        <input type="radio" name="state" value="Женский" id="female"/>
+        <label for="female">Женский</label><br><br>
+
+        //button - что бы стр не обновлялась
+        <input type="button" name="submit" value="Готово" onclick="valid(document.getElementById('form'))">
+    </form>
+  </body>
+</html>
+# LABS
